@@ -42,7 +42,7 @@ Secure Communication Project/
 1. Clone the repository:
 ```bash
 git clone 
-cd 
+cd Secure-Communication
 ```
 
 2. Create and activate virtual environment:
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 4. Set up environment variables:
 ```bash
-cp .env.example .env
+cp .env
 # Edit .env with your configurations
 ```
 
@@ -97,7 +97,7 @@ messenger> register "John"
 
 3. Send a message:
 ```bash
-messenger> send recipient_name "John" message "Hello Alice, I am John!"
+messenger> send "John" message "Hello Alice, I am John!"
 ```
 
 4. Read messages:
@@ -122,18 +122,6 @@ messenger> message
 - Session management
 - Rate limiting
 
-## 🧪 Running the app
-
-Run the app:
-```bash
-python -m pytest tests/
-```
-
-Run with coverage:
-```bash
-coverage run -m pytest tests/
-coverage report
-```
 
 ## 📦 Dependencies
 
@@ -171,23 +159,6 @@ git push origin "branch"
 - Regularly update dependencies
 - Use strong passwords
 - Enable two-factor authentication when possible
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. Key generation fails:
-```bash
-# Check permissions
-chmod 700 ~/.e2ee-cli/keys
-```
-
-2. Message sending fails:
-```bash
-# Verify recipient's public key
-e2ee-cli keys verify --user recipient@example.com
-```
-
 
 ## 👥 Authors
 
