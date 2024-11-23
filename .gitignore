@@ -1,7 +1,15 @@
-venv
-
-.env
-
 #db
 messenger.db
 .DS_Store
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
