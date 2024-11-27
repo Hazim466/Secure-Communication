@@ -27,43 +27,7 @@ class CryptoManager:
             encoding=serialization.Encoding.PEM,
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
-    
-    def encrypt_message(self, message: str, recipient_public_key_pem: bytes):
-        aes_key = AESGCM.generate_key(bit_length=256)
-        aesgcm = AESGCM(aes_key)
-        nonce = os.urandom(12)
-        message_bytes = message.encode()
-        ciphertext = aesgcm.encrypt(nonce, message_bytes, None)
-        recipient_public_key = serialization.load_pem_public_key(recipient_public_key_pem)
-        encrypted_key = recipient_public_key.encrypt(
-            aes_key,
-            padding.OAEP(
-                mgf=padding.MGF1(algorithm=hashes.SHA256()),
-                algorithm=hashes.SHA256(),
-                label=None
-            )
-        )
-        return base64.b64encode(encrypted_key + b":::" + nonce + b":::" + ciphertext)
-    
-    def decrypt_message(self, encrypted_data: bytes):
-        try:
-            decoded = base64.b64decode(encrypted_data)
-            encrypted_key, nonce, ciphertext = decoded.split(b":::")
-            
-            aes_key = self.private_key.decrypt(
-                encrypted_key,
-                padding.OAEP(
-                    mgf=padding.MGF1(algorithm=hashes.SHA256()),
-                    algorithm=hashes.SHA256(),
-                    label=None
-                )
-            )
-            
-            aesgcm = AESGCM(aes_key)
-            plaintext = aesgcm.decrypt(nonce, ciphertext, None)
-            return plaintext.decode()
-        except Exception as e:
-            raise Exception(f"Decryption failed: {str(e)}")
+    # ENCRYPT & DECRYPT code
 
 class MessengerClient(cmd.Cmd):
     intro = '''
