@@ -1,4 +1,5 @@
 # Secure Communication CLI Application
+
 ## Secure Communication Project Command Line Communication Tool
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
