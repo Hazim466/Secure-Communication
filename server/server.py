@@ -77,6 +77,8 @@ def send_message():
         conn.close()
 
 # Message Code 
+def fun():
+    pass
 
 
 # main code
