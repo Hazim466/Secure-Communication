@@ -27,7 +27,7 @@ class CryptoManager:
             encoding=serialization.Encoding.PEM,
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
-    # ENCRYPT & DECRYPT code
+    # ENCRYPT & DECRYPT Code
 
 class MessengerClient(cmd.Cmd):
     intro = '''
