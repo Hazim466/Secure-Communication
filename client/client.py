@@ -1,4 +1,4 @@
-# client.py - CLI client implementation
+# CLI client implementation
 import cmd
 import requests
 import json
