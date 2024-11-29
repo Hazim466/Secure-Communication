@@ -53,7 +53,7 @@ def register():
     finally:
         conn.close()
 
-
+# Getting Keys
 @app.route('/get_public_key/<username>', methods=['GET'])
 def get_public_key(username):
     conn = sqlite3.connect('messenger.db')
