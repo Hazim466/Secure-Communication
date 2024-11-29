@@ -25,4 +25,27 @@ class CryptoManager:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
     
-    # Encrypt & Decrypt Message
+    # Encrypt Message
+    def encrypt_message(self, message: str, recipient_public_key_pem: bytes):
+        # Generate a random AES key
+        aes_key = AESGCM.generate_key(bit_length=256)
+        aesgcm = AESGCM(aes_key)
+        nonce = os.urandom(12)
+        
+        # Encrypt the message using AES-GCM
+        message_bytes = message.encode()
+        ciphertext = aesgcm.encrypt(nonce, message_bytes, None)
+        
+        # Encrypt the AES key using recipient's public key
+        recipient_public_key = serialization.load_pem_public_key(recipient_public_key_pem)
+        encrypted_key = recipient_public_key.encrypt(
+            aes_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
+        )
+        
+        # Combine all components
+        return base64.b64encode(encrypted_key + b":::" + nonce + b":::" + ciphertext)
