@@ -1,4 +1,4 @@
-# crypto.py - Handles all cryptographic operations
+# Handles all cryptographic operations
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
