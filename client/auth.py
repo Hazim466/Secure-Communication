@@ -31,9 +31,9 @@
 #         return response.json()
 
 
-# for secrect_persistant key
+""" Authentication (Handles authentication and identity verification) 
+for secrect_persistant key """
 
-# auth.py - Handles authentication and identity verification
 import requests
 import jwt
 from datetime import datetime, timedelta
