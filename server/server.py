@@ -32,7 +32,7 @@ def init_db():
     except Exception as e:
         print(f"Error initializing database: {e}")
 
-#register user register code
+#register user
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
