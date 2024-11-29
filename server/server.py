@@ -96,8 +96,7 @@ def send_message():
         conn.close()
 
 # Message Code 
-def message():
-    pass # code for message
+
 
 
 # main code
