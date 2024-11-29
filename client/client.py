@@ -1,4 +1,4 @@
-# CLI client implementation
+# client implementation
 import cmd
 import requests
 import json
