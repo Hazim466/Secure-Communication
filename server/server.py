@@ -126,6 +126,6 @@ def get_messages(username):
 if __name__ == '__main__':
     # Initialize database before starting the server
     init_db()
-    print("Server starting...")
+    print("\nServer starting...")
     print("Server is running on http://localhost:5000")
     app.run(debug=True)
