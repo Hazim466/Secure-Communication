@@ -49,3 +49,24 @@ class CryptoManager:
         
         # Combine all components
         return base64.b64encode(encrypted_key + b":::" + nonce + b":::" + ciphertext)
+    
+    # decrypt message
+    def decrypt_message(self, encrypted_data: bytes):
+        # Decode and split components
+        decoded = base64.b64decode(encrypted_data)
+        encrypted_key, nonce, ciphertext = decoded.split(b":::")
+        
+        # Decrypt the AES key using private key
+        aes_key = self.private_key.decrypt(
+            encrypted_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
+        )
+        
+        # Decrypt the message
+        aesgcm = AESGCM(aes_key)
+        plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+        return plaintext.decode()
