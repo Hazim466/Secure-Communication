@@ -47,7 +47,26 @@ class CryptoManager:
         return base64.b64encode(encrypted_key + b":::" + nonce + b":::" + ciphertext)
     
     # DECRYPT Message
-    
+    def decrypt_message(self, encrypted_data: bytes):
+        try:
+            decoded = base64.b64decode(encrypted_data)
+            encrypted_key, nonce, ciphertext = decoded.split(b":::")
+            
+            aes_key = self.private_key.decrypt(
+                encrypted_key,
+                padding.OAEP(
+                    mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                    algorithm=hashes.SHA256(),
+                    label=None
+                )
+            )
+            
+            aesgcm = AESGCM(aes_key)
+            plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+            return plaintext.decode()
+        except Exception as e:
+            raise Exception(f"Decryption failed: {str(e)}")
+
 class MessengerClient(cmd.Cmd):
     intro = '''
     Welcome to Secure Messenger!
