@@ -67,6 +67,7 @@ class CryptoManager:
         except Exception as e:
             raise Exception(f"Decryption failed: {str(e)}")
 
+# Client Messenger
 class MessengerClient(cmd.Cmd):
     intro = '''
     Welcome to Secure Messenger!
