@@ -78,7 +78,7 @@ def send_message():
 
 # Message Code 
 def message():
-    # pass # code for message
+    pass # code for message
 
 
 # main code
