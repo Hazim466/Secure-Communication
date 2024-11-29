@@ -96,7 +96,30 @@ def send_message():
         conn.close()
 
 # Message Code 
-
+@app.route('/messages/<username>', methods=['GET'])
+def get_messages(username):
+    token = request.headers.get('Authorization')
+    if not token:
+        return jsonify({'status': 'error', 'message': 'No token provided'})
+    
+    try:
+        user_data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        if user_data['username'] != username:
+            return jsonify({'status': 'error', 'message': 'Unauthorized'})
+    except:
+        return jsonify({'status': 'error', 'message': 'Invalid token'})
+    
+    conn = sqlite3.connect('messenger.db')
+    c = conn.cursor()
+    try:
+        c.execute('''SELECT sender, message, timestamp FROM messages 
+                     WHERE recipient = ? ORDER BY timestamp DESC LIMIT 50''', 
+                 (username,))
+        messages = [{'sender': m[0], 'message': m[1], 'timestamp': m[2]} 
+                   for m in c.fetchall()]
+        return jsonify({'status': 'success', 'messages': messages})
+    finally:
+        conn.close()
 
 
 # main code
