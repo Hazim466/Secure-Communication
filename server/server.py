@@ -32,8 +32,26 @@ def init_db():
     except Exception as e:
         print(f"Error initializing database: {e}")
 
-#register user
-
+#register user register code
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.json
+    conn = sqlite3.connect('messenger.db')
+    c = conn.cursor()
+    try:
+        c.execute('INSERT INTO users (username, public_key) VALUES (?, ?)', 
+                 (data['username'], data['public_key']))
+        conn.commit()
+        token = jwt.encode(
+            {'username': data['username'], 'exp': datetime.utcnow() + timedelta(days=1)},
+            app.config['SECRET_KEY'],
+            algorithm='HS256'
+        )
+        return jsonify({'status': 'success', 'token': token})
+    except sqlite3.IntegrityError:
+        return jsonify({'status': 'error', 'message': 'Username already exists'})
+    finally:
+        conn.close()
 
 
 @app.route('/get_public_key/<username>', methods=['GET'])
