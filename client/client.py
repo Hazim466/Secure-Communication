@@ -27,8 +27,27 @@ class CryptoManager:
             encoding=serialization.Encoding.PEM,
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
-    # ENCRYPT & DECRYPT Code
-
+    
+    # ENCRYPT Message
+    def encrypt_message(self, message: str, recipient_public_key_pem: bytes):
+        aes_key = AESGCM.generate_key(bit_length=256)
+        aesgcm = AESGCM(aes_key)
+        nonce = os.urandom(12)
+        message_bytes = message.encode()
+        ciphertext = aesgcm.encrypt(nonce, message_bytes, None)
+        recipient_public_key = serialization.load_pem_public_key(recipient_public_key_pem)
+        encrypted_key = recipient_public_key.encrypt(
+            aes_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
+        )
+        return base64.b64encode(encrypted_key + b":::" + nonce + b":::" + ciphertext)
+    
+    # DECRYPT Message
+    
 class MessengerClient(cmd.Cmd):
     intro = '''
     Welcome to Secure Messenger!
