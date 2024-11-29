@@ -66,3 +66,4 @@ class AuthManager:
                                json={'username': username, 
                                     'public_key': public_key_pem.decode()})
         return response.json()
+
