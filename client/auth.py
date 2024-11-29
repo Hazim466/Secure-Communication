@@ -1,4 +1,4 @@
-# # auth.py - for random key generation
+""" authentication - for random key generation """
 
 # import requests
 # import jwt
