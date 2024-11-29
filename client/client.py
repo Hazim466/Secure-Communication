@@ -240,4 +240,5 @@ class MessengerClient(cmd.Cmd):
         print("Type 'help' to see available commands")
 
 if __name__ == '__main__':
+    """ Main Body """
     MessengerClient().cmdloop()
