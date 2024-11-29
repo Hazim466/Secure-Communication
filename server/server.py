@@ -95,7 +95,7 @@ def send_message():
     finally:
         conn.close()
 
-# Message Code 
+# For Message 
 @app.route('/messages/<username>', methods=['GET'])
 def get_messages(username):
     token = request.headers.get('Authorization')
