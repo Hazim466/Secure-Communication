@@ -30,8 +30,7 @@
 #         return response.json()
 
 
-""" Authentication (Handles authentication and identity verification) 
-for secrect_persistant key """
+""" Authentication (Handles authentication and identity verification) for secrect_persistant key """
 
 import requests
 import jwt
