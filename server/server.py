@@ -32,7 +32,7 @@ def init_db():
     except Exception as e:
         print(f"Error initializing database: {e}")
 
-#register user
+# Route for User Registration
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
@@ -53,7 +53,7 @@ def register():
     finally:
         conn.close()
 
-# Getting Keys
+# Route For Getting Keys
 @app.route('/get_public_key/<username>', methods=['GET'])
 def get_public_key(username):
     conn = sqlite3.connect('messenger.db')
