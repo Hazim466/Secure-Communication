@@ -1,4 +1,3 @@
-# server.py
 from flask import Flask, request, jsonify
 import sqlite3
 import jwt
@@ -6,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = os.urandom(24) # 24 bytes random key
 
 # Database Initialization
 def init_db():
