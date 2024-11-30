@@ -53,6 +53,7 @@ def register():
     finally:
         conn.close()
 
+
 # Route For Getting Keys
 @app.route('/get_public_key/<username>', methods=['GET'])
 def get_public_key(username):
@@ -66,6 +67,7 @@ def get_public_key(username):
         return jsonify({'status': 'error', 'message': 'User not found'})
     finally:
         conn.close()
+
 
 # Route For Send message
 @app.route('/send', methods=['POST'])
@@ -94,6 +96,7 @@ def send_message():
         return jsonify({'status': 'success'})
     finally:
         conn.close()
+
 
 # Route For Showing Messages
 @app.route('/messages/<username>', methods=['GET'])
