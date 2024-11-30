@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 
+# Database Initialization
 def init_db():
     try:
         conn = sqlite3.connect('messenger.db')
