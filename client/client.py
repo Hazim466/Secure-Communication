@@ -7,6 +7,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 import os
 import base64
 
+# Encryption manager
 class CryptoManager:
     def __init__(self):
         self.private_key = None
