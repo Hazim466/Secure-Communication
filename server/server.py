@@ -67,7 +67,7 @@ def get_public_key(username):
     finally:
         conn.close()
 
-# Send message
+# Route For Send message
 @app.route('/send', methods=['POST'])
 def send_message():
     token = request.headers.get('Authorization')
@@ -95,7 +95,7 @@ def send_message():
     finally:
         conn.close()
 
-# For Message 
+# Route For Showing Messages
 @app.route('/messages/<username>', methods=['GET'])
 def get_messages(username):
     token = request.headers.get('Authorization')
