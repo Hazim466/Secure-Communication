@@ -21,7 +21,21 @@ Secure Communication Project/
 └── README.md                   # This file
 ```
 
+## 🚀 Features
 
+- **Secure Key Management**
+  - RSA-2048 key pair generation for encryption and decryption
+  - Secure key storage and automatic key exchange for secure communication
+
+- **Message Security**
+  - AES-256 message encryption ensures privacy
+  - End-to-end encryption to prevent interception
+  - Message integrity verification using SHA-256
+
+- **User Authentication**
+  - Secure user registration with username/password authentication
+  - Session management for active users
+  - Two-factor authentication (2FA) support for added security
 
 <!-- # Secure Communication CLI Application
 
