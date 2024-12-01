@@ -126,13 +126,13 @@ messenger> message
 
 ## 📦 Dependencies
 
-- Flask
-- flask-sqlalchemy
-- flask-mail
-- cryptography
-- pyjwt
-- werkzeug
-- python-dotenv
+ - Flask
+ - Flask-SQLAlchemy
+ - Flask-Mail
+ - cryptography
+ - pyjwt
+ - werkzeug
+ - python-dotenv
 
 ## 🤝 Contributing
 
