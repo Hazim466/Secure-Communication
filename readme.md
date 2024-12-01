@@ -8,19 +8,6 @@ A secure command-line interface application that enables end-to-end encrypted co
 
 ## 📁 Project Structure
 
-
-
-
-<!-- # Secure Communication CLI Application
-
-## Secure Communication Project Command Line Communication Tool
-
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-
-A secure command-line interface application that enables end-to-end encrypted communication between two parties without prior key exchange. Built with Python, implementing RSA and AES encryption standards.
-
-## 📁 Project Structure
-
 ```
 Secure Communication Project/
 ├── server/
@@ -33,6 +20,18 @@ Secure Communication Project/
 ├── requirements.txt            # Project dependencies
 └── README.md                   # This file
 ```
+
+
+
+<!-- # Secure Communication CLI Application
+
+## Secure Communication Project Command Line Communication Tool
+
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+
+A secure command-line interface application that enables end-to-end encrypted communication between two parties without prior key exchange. Built with Python, implementing RSA and AES encryption standards.
+
+## 📁 Project Structure
 
 ## 🚀 Features
 
