@@ -37,38 +37,12 @@ Secure Communication Project/
   - Session management for active users
   - Two-factor authentication (2FA) support for added security
 
-<!-- # Secure Communication CLI Application
-
-## Secure Communication Project Command Line Communication Tool
-
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-
-A secure command-line interface application that enables end-to-end encrypted communication between two parties without prior key exchange. Built with Python, implementing RSA and AES encryption standards.
-
-## 📁 Project Structure
-
-## 🚀 Features
-
-- **Secure Key Management**
-  - RSA-2048 key pair generation
-  - Secure key storage
-  - Automatic key exchange
-
-- **Message Security**
-  - AES-256 message encryption
-  - End-to-end encryption
-  - Message integrity verification
-
-- **User Authentication**
-  - Secure user registration
-  - Session management
-  - Two-factor authentication support
 
 ## 🛠️ Installation
 
 1. Clone the repository:
 ```bash
-git clone 
+git clone https://github.com/Hazim466/Secure-Communication.git
 cd Secure-Communication
 ```
 
