@@ -109,9 +109,9 @@ messenger> message
 ## 🔐 Security Features
 
 ### Key Management
-- RSA-2048 for asymmetric encryption
-- Secure key storage using environment variables
-- Regular key rotation support
+- RSA-2048 for asymmetric encryption, ensuring secure key exchange.
+- Secure key storage using environment variables for encryption/decryption keys.
+- Support for regular key rotation to maintain security.
 
 ### Message Security
 - AES-256 for symmetric message encryption
