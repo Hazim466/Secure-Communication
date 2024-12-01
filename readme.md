@@ -114,14 +114,14 @@ messenger> message
 - Support for regular key rotation to maintain security.
 
 ### Message Security
-- AES-256 for symmetric message encryption
-- SHA-256 for message integrity
-- Perfect forward secrecy
+- AES-256 for symmetric message encryption, ensuring confidentiality.
+- SHA-256 for message integrity verification, ensuring the message hasn't been tampered with.
+- Perfect forward secrecy for protecting encrypted communication, even if keys are compromised in the future.
 
 ### Authentication
-- Secure password hashing
-- Session management
-- Rate limiting
+- Secure password hashing to ensure user credentials are stored safely.
+- Session management to handle user login states.
+- Rate limiting to prevent brute-force attacks on authentication endpoints.
 
 
 ## 📦 Dependencies
