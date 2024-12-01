@@ -67,9 +67,9 @@ cp .env
 
 Create a `.env` file with the following variables:
 ```env
-SECRET_KEY=your_secret_key
-STORAGE_PATH=/path/to/storage
-DEBUG_MODE=False
+SECRET_KEY=your_secret_key          # A secret key for cryptographic operations
+STORAGE_PATH=/path/to/storage       # Path for storing user data or keys
+DEBUG_MODE=False                    # Set to True for debugging
 ```
 
 ## 💻 Usage
