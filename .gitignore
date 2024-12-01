@@ -1,16 +1,42 @@
-#db
+# Database files
 messenger.db
+
+# macOS
 .DS_Store
 
-# Environment variables
+# Environment variables file
 .env
 
-# Python
+# Python bytecode files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual Environment
+# Virtual Environment directories
 venv/
 env/
 virtual_env/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Python virtual environment
+venv/
+env/
+
+# .pytest_cache for caching
+.pytest_cache/
+
+# PyCharm specific
+.idea/
+
+# Local Docker files
+# docker-compose.override.yml
+# *.swp
+
+# Secrets, API keys, and other sensitive data
+secrets.json
