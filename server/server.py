@@ -1,4 +1,15 @@
+"""
+Secure Messaging Server
 
+This server application provides the backend functionality for a secure messaging platform.
+It enables users to:
+- Register and store their public keys securely.
+- Retrieve public keys of other users for encrypted communication.
+- Send and store encrypted messages between users.
+- Retrieve and view encrypted messages sent to a user.
+
+The server uses SQLite for data storage and JWT for authentication to ensure secure and seamless communication.
+"""
 
 from flask import Flask, request, jsonify
 import sqlite3
